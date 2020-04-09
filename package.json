@@ -7,10 +7,15 @@
   "author": "Michael Anstis <manstis@redhat.com>",
   "license": "Apache-2.0",
   "files": [
-    "./src/*.ts"
+    "./src/*.ts",
+    "./src/*.js"
   ],
   "scripts": {
+    "generate": "java -jar node_modules/jsonix/lib/jsonix-schema-compiler-full.jar -d ./src/shared -b ./src/resources/bindings.xjb ./src/resources/pmml-4-4.xsd ",
     "build": "npx tsc",
-    "hello": "npx ./dist/main.js"
+    "helloworld": "npx ./dist/main.js"
+  },
+  "devDependencies": {
+    "jsonix": "^3.0.0"
   }
 }
