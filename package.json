@@ -1,0 +1,16 @@
+{
+  "name": "jsonix-pmml",
+  "version": "1.0.0",
+  "description": "Unmarshal PMML XML to JS",
+  "main": "main.ts",
+  "repository": "https://github.com/manstis/jsonix-pmml.git",
+  "author": "Michael Anstis <manstis@redhat.com>",
+  "license": "Apache-2.0",
+  "files": [
+    "./src/*.ts"
+  ],
+  "scripts": {
+    "build": "npx tsc",
+    "hello": "npx ./dist/main.js"
+  }
+}
