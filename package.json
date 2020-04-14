@@ -11,11 +11,17 @@
     "./src/*.js"
   ],
   "scripts": {
-    "generate": "java -jar node_modules/jsonix/lib/jsonix-schema-compiler-full.jar -d ./src/shared -b ./src/resources/bindings.xjb ./src/resources/pmml-4-4.xsd ",
-    "build": "npx tsc",
-    "helloworld": "npx ./dist/main.js"
+    "cxsd": "cxsd",
+    "clean": "gulp clean:output",
+    "generate-cxsd": "cxsd --out-js ./src/generated --out-ts ./src/generated http://dmg.org/pmml/v4-4/pmml-4-4.xsd",
+    "generate-jsonix": "java -jar node_modules/jsonix/lib/jsonix-schema-compiler-full.jar -d ./src/generated -b ./src/resources/bindings.xjb ./src/resources/pmml-4-4.xsd ",
+    "build": "yarn run clean && yarn run generate-cxsd && yarn run generate-jsonix && tsc",
+    "demo": "yarn run build && npx ./dist/main.js"
   },
   "devDependencies": {
+    "cxsd": "^0.1.1",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
     "jsonix": "^3.0.0"
   }
 }

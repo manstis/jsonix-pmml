@@ -3,6 +3,9 @@ dist/
 coverage/
 target/
 out/
+cache/
+src/generated
+
 .idea
 **/.DS_Store
 *.log

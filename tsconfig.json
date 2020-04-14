@@ -4,9 +4,14 @@
     "module": "commonjs",
     "strict": true,
     "outDir": "dist",
-    "sourceMap": true
+    "sourceMap": true,
+    "allowJs": true
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "src/generated/xml-primitives.js",
+    "src/generated/www.dmg.org/PMML-4-4.js"
   ]
 }
