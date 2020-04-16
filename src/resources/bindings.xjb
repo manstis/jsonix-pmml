@@ -18,7 +18,7 @@
 	version="2.1"
 	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
 	xmlns:jsonix="http://jsonix.highsource.org/customizations"
-    xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+        xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	jaxb:extensionBindingPrefixes="jsonix">
 
@@ -27,9 +27,7 @@
 			<jaxb:package name="pmml"/>
 		</jaxb:schemaBindings>
 
-		<jsonix:packageMapping
-			packageName="pmml"
-			spaceName="PMML"/>
+		<jsonix:mapping name="PMML" package="pmml"/>
 
         <!-- rename the value element -->
         <!-- <xs:element name="OutputField"> -->
