@@ -1,5 +1,6 @@
 import { unmarshal } from "./unmarshall/unmarshaller";
-
+import * as PMML from "./generated/www.dmg.org/PMML-4_4";
+import { document } from "./generated/www.dmg.org/PMML-4_4";
 
 const xml: string = "<PMML xmlns='http://www.dmg.org/PMML-4_4' version='4.4'> \
 <Header copyright='DMG.org'/> \
@@ -32,3 +33,9 @@ const xml: string = "<PMML xmlns='http://www.dmg.org/PMML-4_4' version='4.4'> \
 const pmml = unmarshal(xml);
 console.log("Header=" + JSON.stringify(pmml.value.header, null, " "));
 console.log("RegressionModel=" + JSON.stringify(pmml.value.anomalyDetectionModelOrAssociationModelOrBayesianNetworkModel[0], null, " "));
+
+//Typed PMML document (need to copy from the above to this; then I can swap out the marshaller if/when needed).
+const doc: document = PMML.document;
+doc.Header.copyright = "1.0";
+
+console.log(doc.Header);
