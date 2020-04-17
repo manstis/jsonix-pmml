@@ -23,5 +23,8 @@
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "jsonix": "^3.0.0"
+  },
+  "dependencies": {
+    "@wikipathways/cxml": "^0.2.14"
   }
 }
